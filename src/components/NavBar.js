@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <div className="flex items-center w-full p-4">
       <div className="flex items-center w-2/12">
-        <Link href="/">
+        <Link href="/" passHref>
           <Image src="/tweeter.svg" alt="logo" width={130} height={40} />
         </Link>
       </div>
