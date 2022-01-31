@@ -5,8 +5,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Link from "next/link";
-import { login } from "../services/loginServices";
 import { useRouter } from "next/router";
+import { connect } from "react-redux";
+// Actions
+import * as authActions from "../actions/authActions";
+// Services
+import { login } from "../services/loginServices";
 
 const schema = yup
   .object({
@@ -15,7 +19,7 @@ const schema = yup
   })
   .required();
 
-export default function Login() {
+function Login(props) {
   const router = useRouter();
 
   const {
@@ -28,7 +32,10 @@ export default function Login() {
 
   const handleLogin = async (user) => {
     await login(user)
-      .then(() => router.push("/"))
+      .then(async () => {
+        await props.traerDatosUsuario();
+        router.push("/");
+      })
       .catch((err) => {
         console.log(err);
       });
@@ -82,3 +89,11 @@ export default function Login() {
     </div>
   );
 }
+
+const mapStateToProps = ({ authReducer }) => authReducer;
+
+const mapDispatchToProps = {
+  ...authActions,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

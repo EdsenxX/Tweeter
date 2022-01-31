@@ -18,6 +18,18 @@ const login = (user) =>
       });
   });
 
+const getData = (token) =>
+  new Promise(async (resolve, reject) => {
+    await Axios.post("/api/auth", { withCredentials: true })
+      .then((res) => {
+        resolve(res.data.results);
+      })
+      .catch((err) => {
+        reject(err.response.data);
+      });
+  });
+
 module.exports = {
   login,
+  getData,
 };
