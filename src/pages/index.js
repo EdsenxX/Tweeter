@@ -1,16 +1,21 @@
 // Dependencies
 import Image from "next/image";
+import Head from "next/head";
 import { AiOutlineUserAdd, AiOutlineHeart } from "react-icons/ai";
 import { MdOutlineModeComment } from "react-icons/md";
 import { FaRetweet } from "react-icons/fa";
 import { BsBookmarkPlus, BsImage } from "react-icons/bs";
-// Components
-import NavBar from "components/NavBar";
 
 export default function Home() {
   return (
     <div>
-      <NavBar />
+      <Head>
+        <title>Daniel Jensen - Tweeter</title>
+        <meta
+          name="description"
+          content="Photographer & Filmmaker based in Copenhagen, Denmark"
+        />
+      </Head>
       <div className="w-full flex flex-col items-center bg-gray-100">
         <Image
           src={"https://source.unsplash.com/random/1400x300"}
