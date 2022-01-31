@@ -1,7 +1,7 @@
 import { serialize } from "cookie";
 import jwt from "jsonwebtoken";
-import UserModel from "models/user";
-import dbConnect from "utils/db";
+import UserModel from "../../models/user";
+import dbConnect from "../../utils/db";
 
 export default async function handler(req, res) {
   await dbConnect();

@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Link from "next/link";
-import { login } from "services/loginServices";
+import { login } from "../services/loginServices";
 import { useRouter } from "next/router";
 
 const schema = yup
