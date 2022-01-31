@@ -36,9 +36,10 @@ export default function Home() {
                     rows="2"
                     placeholder="What's happening?"
                     className="w-full outline-none resize-none p-2 text-sm"
+                    maxLength={140}
                   ></textarea>
                   <div className="flex justify-between items-center">
-                    <div className="flex gap-2 items-center">
+                    <div className="flex gap-2 items-center px-2">
                       <BsImage className="text-blue-500 text-lg" />
                       <div className="flex gap-1 items-center">
                         <BiWorld className="text-blue-500 text-xl" />
