@@ -1,6 +1,6 @@
-import dbConnect from "utils/db";
-import User from "models/User";
-import { paramsBuilder } from "utils/helpers";
+import dbConnect from "../../../utils/db";
+import User from "../../../models/User";
+import { paramsBuilder } from "../../../utils/helpers";
 
 export default async function handler(req, res) {
   await dbConnect();
