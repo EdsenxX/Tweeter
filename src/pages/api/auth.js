@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import UserModel from "../../models/user";
+import UserModel from "../../models/User";
 
 export default function helper(req, res) {
   const validateJWT = (req, res) => {
